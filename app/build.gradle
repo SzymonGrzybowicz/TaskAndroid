@@ -26,12 +26,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "int", "LOG_LEVEL", "android.util.Log.VERBOSE"
+            ext.enableCrashlytics = false
+        }
         release {
+            buildConfigField "int", "LOG_LEVEL", "android.util.Log.INFO"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {

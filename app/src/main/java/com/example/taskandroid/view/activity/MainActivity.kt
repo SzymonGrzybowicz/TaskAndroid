@@ -1,18 +1,17 @@
 package com.example.taskandroid.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
+import com.example.base.ui.BaseActivity
 import com.example.taskandroid.R
-import com.example.taskandroid.view_model.activity.MainActivityViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
+
+    override fun getLogTag(): String {
+        return "MainActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-
-
-    val mViewModel: MainActivityViewModel by viewModels()
 }
